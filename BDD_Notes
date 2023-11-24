@@ -1,0 +1,105 @@
+BDD Cucumber :
+
+1. Linear Scripting Framework - we need to code line by line
+
+2. Modular Testing Framework
+
+3. TestNG Framework - Data-Driven Framework
+
+4. Keyword Driven Framework
+
+5. Hybrid Framework
+
+6. Behavior- Driven Development Framework (BDD)  TDD - Test Driven Development
+
+=================================Traditional Development Process============
+
+
+1. Stakeholders / End Users :
+
+>login feature
+>locgout feature
+>product feature, list of products
+>payment feature
+>billing feature
+>accounts, contact us
+
+2. PO/BA :
+
+>login feature
+>locgout feature
+>product feature, list of products
+>Payment feature & Billing feature ( BA made assumption that dev team will craete then as separate pages)
+>accounts, contact us ( BA made assumption that dev team will craete then as separate pages)
+
+3. Development Team : these requirements documented by BA/PO are given to dev team
+
+>login feature >code
+>logout feature > code
+> Product Page > Added from any legacy system and new product were missed
+> Forgot to write Contact us feature
+
+4. Test Team : these requirements documented by BA/PO are given to test team
+
+>login feature - pass
+>locgout feature - pass
+>product feature, list of products - Fail - major bug
+>Payment feature & Billing feature ( BA made assumption that dev team will craete then as separate pages) - found bugs
+>accounts, contact us ( BA made assumption that dev team will craete then as separate pages) - missing requirement
+
+=============Behaviour Driven Development Process=================
+
+
+1. Stakeholders + PO + BA (Discuss about business requirements)
+
+2. BA/PO + Dev + QA (discuss and collobrate on the requirements)
+
+3. BA > Once all the requirement are agreed by stakeholders and 3 amigos thes req are fomatted using the language Gherkin -> Domain specific language
+- Semi formal language. Easy to write and easy to read.
+
+4. QA team will start writing manual test cases based on the formatted scenarios.
+
+5. Developers will start coding for each scenarios, QA team can write the automation test scripts.
+
+6. Finish the Build.
+
+Tools to implement BDD : 
+
+Cucumber
+Jbehave
+Jdave
+Instnict
+specFlow
+
+==============
+
+Features                            Feature file name
+
+Login				login.feature
+
+Products                        product.feature
+
+=============================================
+
+Feature : Description of Page to be tested
+
+Scenario : What test case you want to test
+
+Given
+When
+Then
+And 
+But
+===================================
+
+Feature : User should send an email
+
+Scenario : User should compose the email
+
+Given I will open the chrome browser
+When I enter the gmail.com as URL
+Then I am on my mailbox, I will capture the title of the page
+Then I will click on compose box
+And I will write the content in email
+Then I will click on send button.
+And close the browser.
