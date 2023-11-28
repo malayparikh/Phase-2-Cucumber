@@ -1,0 +1,104 @@
+Feature: Test Tagged Hooks
+
+  @First
+  Scenario: This is First Scenario
+    Given this is the first step
+    When this is the second step
+    Then this is the third step
+
+  @Second
+  Scenario: This is Second Scenario
+    Given this is the first step
+    When this is the second step
+    Then this is the third step
+
+  @Third
+  Scenario: This is Third Scenario
+    Given this is the first step
+    When this is the second step
+    Then this is the third step
+======================================================step def. file=======================
+package steps;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class Hooks_Steps {
+	
+	@Given("this is the first step")
+	public void this_is_the_first_step() {
+		System.out.println("This is the first step");
+	
+	}
+
+	@When("this is the second step")
+	public void this_is_the_second_step() {
+		System.out.println("This is the second step");
+
+	}
+
+	@Then("this is the third step")
+	public void this_is_the_third_step() {
+		System.out.println("This is the third step");
+	
+	}
+
+}
+==========================================Hook file====================================
+package steps;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+
+public class Hooks {
+
+	@Before
+	public void beforeScenario() {
+
+		System.out.println("This will run before the every step Hooks.java");
+	}
+
+	@After
+	public void afterScenario() {
+
+		System.out.println("This will run after the every step Hook.java");
+	}
+
+	@Before("@First,@Second")
+	public void beforeFirst() {
+
+		System.out.println("This will run only before the First Scenario");
+	}
+
+	@Before("@Second")
+	public void beforeSecond() {
+
+		System.out.println("This will run only before the Second Scenario");
+	}
+
+	@Before("@Third")
+	public void beforeThird() {
+
+		System.out.println("This will run only before the Third Scenario");
+	}
+
+	@After("@First")
+	public void afterFirst() {
+
+		System.out.println("This will run only before the First Scenario");
+	}
+
+	@After("@Second")
+	public void afterSecond() {
+
+		System.out.println("This will run only before the Second Scenario");
+	}
+
+	@After("@Third")
+	public void afterThird() {
+
+		System.out.println("This will run only before the Third Scenario");
+	}
+
+}
